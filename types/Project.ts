@@ -1,4 +1,5 @@
 import { PortableTextBlock } from "sanity";
+import { Tool } from "./Tool";
 
 export type Project = {
   _id: string;
@@ -8,4 +9,6 @@ export type Project = {
   image: string;
   url: string;
   content: PortableTextBlock[];
+  tools: Tool[];
+  repo: string;
 };

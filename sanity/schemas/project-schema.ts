@@ -37,10 +37,21 @@ const project = {
       type: "url",
     },
     {
+      name: "repo",
+      title: "Repo",
+      type: "url",
+    },
+    {
       name: "content",
       title: "Content",
       type: "array",
-      of: [{ type: "block" }],
+      of: [{ type: "block" }, { type: "image" }],
+    },
+    {
+      name: "tools",
+      title: "Tools",
+      type: "array",
+      of: [{ type: "reference", to: { type: "tool" } }],
     },
   ],
 };

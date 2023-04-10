@@ -12,7 +12,7 @@ export async function getProjects(): Promise<Project[]> {
       "slug": slug.current,
       "image": image.asset->url,
       url,
-      content
+      content,
     }`
   );
 }
@@ -26,7 +26,16 @@ export async function getProject(slug: string): Promise<Project> {
       "slug": slug.current,
       "image": image.asset->url,
       url,
-      content
+      repo,
+      content,
+      tools[]->{
+        _id,
+        _createdAt,
+        name,
+        "slug": slug.current,
+        "icon": icon.asset->url,
+        url,
+      }
     }`,
     { slug }
   );
