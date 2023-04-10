@@ -27,11 +27,11 @@ export default function Project({ params }: Props) {
   if (!project) return null;
   return (
     <div>
-      <header className="flex items-center justify-between">
+      <header className="flex items-center justify-between flex-col md:flex-row">
         <h1 className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-5xl drop-shadow font-extrabold">
           {project.name}
         </h1>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 mt-4 md:mt-0">
           {project.repo && (
             <a
               href={project.repo}
@@ -66,15 +66,15 @@ export default function Project({ params }: Props) {
           )}
         </div>
       </header>
-
-      <div className="flex items-center mt-5 gap-2">
+      <h4 className="text-base text-gray-600 mt-5">Tools:</h4>
+      <div className="flex items-center gap-2 w-full overflow-x-auto pb-2">
         {tools?.map((tool) => (
           <Link
             href={tool.url}
             target="_blank"
             rel="noreferrer noopener"
             key={tool._id}
-            className="flex items-center border p-2 rounded-lg hover:bg-gray-100 transition h-15"
+            className="flex items-center border p-2 rounded-lg hover:bg-gray-100 transition h-12 min-w-fit"
           >
             <Image
               src={tool.icon}
@@ -83,6 +83,8 @@ export default function Project({ params }: Props) {
               height={40}
               style={{
                 objectFit: "cover",
+                height: "100%",
+                width: "auto",
               }}
             />
             <p className="text-gray-700 text-lg ml-2">{tool.name}</p>
