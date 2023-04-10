@@ -3,7 +3,7 @@ import { createClient } from "next-sanity";
 import { useNextSanityImage } from "next-sanity-image";
 import Image from "next/image";
 
-const SanityImage = ({ asset }) => {
+const SanityImage = ({ asset }: any) => {
   const client = createClient(config);
   const imageProps = useNextSanityImage(client, asset);
 
