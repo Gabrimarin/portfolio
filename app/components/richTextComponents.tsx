@@ -11,16 +11,19 @@ const SanityImage = ({ asset }: any) => {
 
   return (
     <Image
-      {...imageProps}
+      {...(imageProps as {
+        src: string;
+      })}
       layout="responsive"
       sizes="(max-width: 800px) 100vw, 800px"
+      alt={asset.alt}
     />
   );
 };
 
 export const myPortableTextComponents = {
   types: {
-    image: ({ value }) => {
+    image: ({ value }: any) => {
       return <SanityImage {...value} />;
     },
   },
